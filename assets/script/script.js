@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', () =>{
 const collection = [
             // Honda Section
     {
-        brand: "Honda",
-        model: ["Civic", "EK9", "1.6VTi"],
-        type: ["Hatchback", "FWD"],
-        motor: ["B16B", "I4", "DOHC", "VTEC"],
+        brand: "HONDA",
+        model: " CIVIC | EK9 | 1.6VTi ",
+        type: "Hatchback | FWD",
+        motor: "B16B | I4 | DOHC | VTEC",
         horsePower: 185,
         torquePower: 160,
         weightKg: 1050, 
@@ -16,10 +16,10 @@ const collection = [
     },
 
     {
-        brand: "Honda",
-        model: ["Civic", "EG6", "1.6VTi"],
-        type: ["Hatchback", "FWD"],
-        motor: ["B16A", "I4", "DOHC", "VTEC"],
+        brand: "HONDA",
+        model: "CIVIC | EG6 | 1.6VTi",
+        type: "Hatchback | FWD",
+        motor: "B16A | I4 | DOHC | VTEC",
         horsePower: 160,
         torquePower: 150,
         weightKg: 1080, 
@@ -29,10 +29,10 @@ const collection = [
     },
 
     {
-        brand: "Honda",
-        model: ["Prelude", "BA4", "2.0i", "4WS"],
-        type: ["Coupe", "FWD"],
-        motor: ["B20A7", "I4", "DOHC"],
+        brand: "HONDA",
+        model: "PRELUDE | BA4 | 2.0i | 4WS",
+        type: "Coupe | FWD",
+        motor: "B20A7 | I4 | DOHC",
         horsePower: 150,
         torquePower: 180,
         weightKg: 1140, 
@@ -42,10 +42,10 @@ const collection = [
     },
 
     {
-        brand: "Honda",
-        model: ["Prelude", "BB5", "2.2VTi", "4WS"],
-        type: ["Coupe", "FWD"],
-        motor: ["H22A", "I4", "DOHC", "VTEC"],
+        brand: "HONDA",
+        model: "PRELUDE | BB5 | 2.2VTi | 4WS",
+        type: "Coupe | FWD",
+        motor: "H22A | I4 | DOHC | VTEC",
         horsePower: 200,
         torquePower: 210,
         weightKg: 1320, 
@@ -55,10 +55,10 @@ const collection = [
     },
 
     {
-        brand: "Honda",
-        model: ["Integra Type-R", "DC2", "1.8VTi"],
-        type: ["Coupe", "FWD"],
-        motor: ["B18C6", "I4","DOHC" ,"VTEC"],
+        brand: "HONDA",
+        model: "Integra Type-R | DC2 | 1.8VTi",
+        type: "Coupe | FWD",
+        motor: "B18C6 | I4 | DOHC | VTEC",
         horsePower: 190,
         torquePower: 180,
         weightKg: 1125,
@@ -68,10 +68,10 @@ const collection = [
     },
 
     {
-        brand: "Honda",
-        model: ["NSX", "NA", "3.0VTi"],
-        type: ["Coupe", "RWD"],
-        motor: ["C30A", "V6", "DOHC", "VTEC"],
+        brand: "HONDA",
+        model: "NSX | NA | 3.0VTi",
+        type: "Coupe | RWD",
+        motor: "C30A | V6 | DOHC | VTEC",
         horsePower: 275,
         torquePower: 285,
         weightKg: 1370, 
@@ -81,10 +81,10 @@ const collection = [
     },
              // Mazda Section
     {
-        brand: "Mazda",
-        model: ["RX-7", "FD3S", "1.3i"],
-        type: ["Coupe", "RWD"],
-        motor: ["13B-REW", "BiRotor", "Twin-Turbo"],
+        brand: "MAZDA",
+        model: "RX-7 | FD3S | 1.3i",
+        type: "Coupe | RWD",
+        motor: "13B-REW | BiRotor | Twin-Turbo",
         horsePower: 255,
         torquePower: 294,
         weightKg: 1260,
@@ -95,9 +95,9 @@ const collection = [
 
     {
         brand: "Mazda",
-        model: "RX-7 FC3S",
-        type: ["Coupe", "RWD"],
-        motor: ["13B-REW", "BiRotor", "Turbo"],
+        model: "RX-7 | FC3S | 1.3i",
+        type: "Coupe | RWD",
+        motor: "13B-REW | BiRotor | Turbo",
         horsePower: 200,
         torquePower: 265,
         weightKg: 1300,
@@ -222,20 +222,20 @@ const collection = [
     picture: "https://w.wallhaven.cc/full/zm/wallhaven-zm76lo.jpg",
                 
     },
-];
 
+]
 const returnCollection = (objects) => {
     return objects.map((object) => ` 
       <div class="card">
         <picture class="cars-pic">
             <source media="(min-width:768px)" srcset="${object.picture}">
-            <source media="(max-width:768px)" srcset="${object.picture}">
+            <source media="(max-width:768px)" srcset="${object.picture}" width="100%">
             <img src="${object.picture}" alt="${object.brand}"/>
         </picture>
         <div class="card_content">
-          <h3>${object.brand}</h3>
-          <h3>Model: ${object.model}</h3>
-          <h3>Motor: ${object.motor}</h3>
+          <h2>${object.brand}</h2>
+          <h3 class="model">${object.model}</h3>
+          <h3 class="motor">Engine: ${object.motor}</h3>
           <h4>HP / NM: ${object.horsePower} / ${object.torquePower}</h4>
           <h4>Weight(KG): ${object.weightKg}</h4>
           <p>Type : ${object.type}</p>

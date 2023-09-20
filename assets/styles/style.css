@@ -1,0 +1,19 @@
+.card{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(248, 248, 248);
+    text-decoration: none;
+}
+h2{
+    text-align: center;
+}
+#container-card{
+    display: grid;
+    justify-content: center;
+}
+
+.motor{
+    justify-content: center;
+    align-content: center;
+}

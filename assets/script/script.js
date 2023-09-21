@@ -37,7 +37,7 @@ const collection = [
         torquePower: 180,
         weightKg: 1140, 
         releaseYear: 1987,
-        picture: "https://farm2.staticflickr.com/1556/23999633050_298bc2c25a_k.jpg",
+        picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRezGI-MeZ9plS_82zOfW0GVxoUvuQo63iH1Q&usqp=CAU",
         
     },
 

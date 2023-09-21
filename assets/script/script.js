@@ -94,7 +94,7 @@ const collection = [
     },
 
     {
-        brand: "Mazda",
+        brand: "MAZDA",
         model: "RX-7 | FC3S | 1.3i",
         type: "Coupe | RWD",
         motor: "13B-REW | BiRotor | Turbo",
@@ -107,10 +107,10 @@ const collection = [
     },
             // Nissan Section
     {
-        brand: "Nissan",
+        brand: "NISSAN",
         model: "Skyline GT-R | BNR34 | 2.6i",
         type: "Coupe | AWD",
-        motor: "RB26DETT | I6 | DOHC | Twin-Turbo",
+        motor: "RB26DETT | I6 | DOHC | Turbo",
         horsePower: 320,
         torquePower: 385,
         weightKg: 1540, 
@@ -120,10 +120,10 @@ const collection = [
     },
 
     {
-        brand: "Nissan",
+        brand: "NISSAN",
         model: "Skyline GT-R | BNR32 | 2.6i",
         type: "Coupe | AWD",
-        motor: "RB26DETT | I6 | DOHC | Twin-Turbo",
+        motor: "RB26DETT | I6 | DOHC | Turbo",
         horsePower: 280,
         torquePower: 355,
         weightKg: 1430, 
@@ -133,7 +133,7 @@ const collection = [
     },
 
     {
-        brand: "Nissan",
+        brand: "NISSAN",
         model: "Silvia | S14 | 2.0i",
         type: "Coupe | RWD",
         motor: "SR20DET | I4 | DOHC | Turbo",
@@ -146,7 +146,7 @@ const collection = [
     },
 
     {
-        brand: "Nissan",
+        brand: "NISSAN",
         model: "Silvia | RS13 | 2.0i",
         type: "Coupe | RWD",
         motor: "SR20DET I4 | DOHC | Turbo",
@@ -159,10 +159,10 @@ const collection = [
     },
             // Toyota Section
     {
-        brand: "Toyota",
+        brand: "TOYOTA",
         model: "Supra | AJ-80 | 3.0i",
         type: "Coupe | RWD",
-        motor: "2JZGTE | I6 | DOHC | Twin-Turbo",
+        motor: "2JZGTE | I6 | DOHC | Turbo",
         horsePower: 330,
         torquePower: 440,
         weightKg: 1630, 
@@ -172,7 +172,7 @@ const collection = [
     },
 
     {
-        brand: "Toyota",
+        brand: "TOYOTA",
         model: "Sprinter Trueno | AE-86 | 1.6i",
         type: "Coupe | RWD",
         motor: "4AGE | I4 | DOHC",
@@ -185,7 +185,7 @@ const collection = [
     },
 
     {
-        brand: "Toyota",
+        brand: "TOYOTA",
         model: "Chaser | JZX-100 | 2.5i",
         type: "Coupe | RWD",
         motor: "1JZGTE | I6 | DOHC | Turbo",
@@ -198,8 +198,8 @@ const collection = [
     },
             // Mitsubishi Section
     {
-        brand: "Mitsubishi",
-        model: "Evolution VI | AE-86 | 2.0i",
+        brand: "MITSUBISHI",
+        model: "Evolution VI | 2.0i",
         type: "Sedan | AWD",
         motor: "4G63 | I4 | DOHC | Turbo",
         horsePower: 280,
@@ -211,7 +211,7 @@ const collection = [
     },
             // Subaru Section
     {
-    brand: "Subaru",
+    brand: "SUBARU",
     model: "Impreza WRX STi | 22B | 2.2i",
     type: "Sedan | AWD",
     motor: "EJ22 | F4 | DOHC",
@@ -232,7 +232,7 @@ const returnCollection = (objects) => {
             <source class="cars-pic"  media="(max-width:768px)" srcset="${object.picture}" width="100%">
             <img class="cars-pic" src="${object.picture}" alt="${object.brand}"/>
         </picture>
-        <div class="card_content">
+        <div class="card-content">
           <h2>${object.brand}</h2>
           <h3 class="model">${object.model}</h3>
           <div class="desc-card">
@@ -252,6 +252,7 @@ const returnCollection = (objects) => {
 
   const generatedHTML = returnCollection(collection);
   const listContainer = document.getElementById("container-card");
+  
   if (listContainer) {
     listContainer.innerHTML = generatedHTML;
     ;

@@ -1,4 +1,13 @@
-
+body{
+    background-image: url("https://i.pinimg.com/originals/4d/76/de/4d76de47dc54d51ed73e924e9f2f9a5b.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@font-face {
+    font-family: JapanRich;
+    src: url(./assets/font/JapanRich.wolf2);
+  }
 /* MOBILE */ 
 @media (max-width: 767px) {
     .card{
@@ -12,7 +21,7 @@
         text-decoration: none;
         background: linear-gradient(135deg,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-    
+
     h2 , h3{
         text-align: center;
     }
@@ -132,27 +141,43 @@
 @media (min-width: 1024px) {
     .card{
         width: 300px;
-        height: 800px;
+        height: 703px;
         margin-bottom: 20px;
         box-shadow: 1px  5px 25px;
         border: 5px solid rgb(75, 75, 75);
-        border-radius: 5px;
+        border-radius: 20px;
         text-decoration: none;
         background: linear-gradient(135deg,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-    
+    #title{
+        color: white;
+        font-family: "JapanRich";
+        padding: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        background: rgba( 255, 255, 255, 0.05 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4.5px );
+        -webkit-backdrop-filter: blur( 4.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
     h2 , h3{
         text-align: center;
     }
     h3{
+        font-size: 18px;
         font-family: 'Ubuntu', sans-serif;
         color: rgb(196, 196, 196);
     }
     h2{
+        font-size: 24px;
         font-family: 'Mukta', sans-serif;
         color: rgb(231, 231, 231);
     }
     .desc-card{
+        width: 270px;
+        height: 350px;
         padding: 15px 15px;
         border-radius: 15px;
         background: rgb(255,255,255);
@@ -162,17 +187,18 @@
         background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgba(200,200,200,1) 100%);}
     #container-card{
         width: 300px;
-        height: 200px;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        margin-left: 60px;
+        gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
         grid-auto-rows: auto;
-        flex-wrap: wrap;
     }
     
     .motor{
         border-top: 1px solid black;
         padding-top: 2rem;
         justify-content: center;
+        font-size: 14px;
         align-content: center;
     }
     #prod{
@@ -183,7 +209,9 @@
     .cars-pic{
         width: 300px;
         height: 200px;
-        border-radius: 5px;
+        
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     
     }
     button{

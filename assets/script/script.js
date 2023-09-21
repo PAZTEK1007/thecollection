@@ -37,7 +37,7 @@ const collection = [
         torquePower: 180,
         weightKg: 1140, 
         releaseYear: 1987,
-        picture: "http://tuning.im/wp-content/uploads/2015/05/Honda-Prelude-2.jpg",
+        picture: "https://farm2.staticflickr.com/1556/23999633050_298bc2c25a_k.jpg",
         
     },
 
@@ -268,7 +268,7 @@ const collection = [
   
       const motorInfo = document.createElement("h4");
       motorInfo.classList.add("motor");
-      motorInfo.textContent = `Engine: ${object.motor}`;
+      motorInfo.textContent = `${object.motor}`;
   
       const horsePowerInfo = document.createElement("h5");
       horsePowerInfo.textContent = `${object.horsePower} HP / ${object.torquePower} Nm`;

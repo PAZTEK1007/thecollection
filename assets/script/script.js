@@ -224,39 +224,102 @@ const collection = [
     },
 
 ]
-const returnCollection = (objects) => {
-    return objects.map((object) => ` 
-      <div class="card">
-        <picture class="cars-pic">
-            <source class="cars-pic" media="(min-width:768px)" srcset="${object.picture} width="50%">
-            <source class="cars-pic"  media="(max-width:768px)" srcset="${object.picture}" width="100%">
-            <img class="cars-pic" src="${object.picture}" alt="${object.brand}"/>
-        </picture>
-        <div class="card-content">
-          <h2>${object.brand}</h2>
-          <h3 class="model">${object.model}</h3>
-          <div class="desc-card">
-            <h4 class="motor">${object.motor}</h4>
-            <h5>${object.horsePower} HP / ${object.torquePower} Nm</h5>
-            <h5>Weight : ${object.weightKg} Kg</h4>
-            <h5>Type : ${object.type}</h5>
-            <h5 id="prod">Production: ${object.releaseYear}</h5>
-            <button>Delete</button>
-          </div>
-        </div>
-      </div>
-    `
-    ).join("");
-  };
   
-
-  const generatedHTML = returnCollection(collection);
-  const listContainer = document.getElementById("container-card");
+    const listContainer = document.getElementById("container-card");
   
-  if (listContainer) {
-    listContainer.innerHTML = generatedHTML;
-    ;
-  } else {
-    console.error("Element with ID 'container-card' not found in the document.");
-  }
-});
+    function createCardElement(object) {
+      const card = document.createElement("div");
+      card.classList.add("card");
+  
+      const picture = document.createElement("picture");
+      picture.classList.add("cars-pic");
+  
+      const sourceMinWidth = document.createElement("source");
+      sourceMinWidth.setAttribute("media", "(min-width:768px)");
+      sourceMinWidth.setAttribute("srcset", object.picture);
+      sourceMinWidth.setAttribute("width", "50%");
+  
+      const sourceMaxWidth = document.createElement("source");
+      sourceMaxWidth.setAttribute("media", "(max-width:768px)");
+      sourceMaxWidth.setAttribute("srcset", object.picture);
+      sourceMaxWidth.setAttribute("width", "100%");
+  
+      const image = document.createElement("img");
+      image.classList.add("cars-pic");
+      image.setAttribute("src", object.picture);
+      image.setAttribute("alt", object.brand);
+  
+      picture.appendChild(sourceMinWidth);
+      picture.appendChild(sourceMaxWidth);
+      picture.appendChild(image);
+  
+      const cardContent = document.createElement("div");
+      cardContent.classList.add("card-content");
+  
+      const brandHeader = document.createElement("h2");
+      brandHeader.textContent = object.brand;
+  
+      const modelHeader = document.createElement("h3");
+      modelHeader.classList.add("model");
+      modelHeader.textContent = object.model;
+  
+      const descCard = document.createElement("div");
+      descCard.classList.add("desc-card");
+  
+      const motorInfo = document.createElement("h4");
+      motorInfo.classList.add("motor");
+      motorInfo.textContent = `Engine: ${object.motor}`;
+  
+      const horsePowerInfo = document.createElement("h5");
+      horsePowerInfo.textContent = `${object.horsePower} HP / ${object.torquePower} Nm`;
+  
+      const weightInfo = document.createElement("h5");
+      weightInfo.textContent = `Weight : ${object.weightKg} Kg`;
+  
+      const typeInfo = document.createElement("h5");
+      typeInfo.textContent = `Type : ${object.type}`;
+  
+      const productionYearInfo = document.createElement("h5");
+      productionYearInfo.textContent = `Production: ${object.releaseYear}`;
+  
+      const deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+  
+      deleteButton.addEventListener("click", () => {
+        card.classList.add("card-fade-out");
+        setTimeout(() => {
+        listContainer.removeChild(card);
+        },700);
+      });
+  
+      descCard.appendChild(motorInfo);
+      descCard.appendChild(horsePowerInfo);
+      descCard.appendChild(weightInfo);
+      descCard.appendChild(typeInfo);
+      descCard.appendChild(productionYearInfo);
+      descCard.appendChild(deleteButton);
+  
+      cardContent.appendChild(brandHeader);
+      cardContent.appendChild(modelHeader);
+      cardContent.appendChild(descCard);
+  
+      card.appendChild(picture);
+      card.appendChild(cardContent);
+  
+      return card;
+    }
+  
+    const addCardsToContainer = () => {
+      collection.forEach((object) => {
+        const cardElement = createCardElement(object);
+        listContainer.appendChild(cardElement);
+      });
+    };
+  
+    if (listContainer) {
+      addCardsToContainer();
+    } else {
+      console.error("Element with ID 'container-card' not found in the document.");
+    }
+  });
+  

@@ -4,49 +4,65 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-@font-face {
-    font-family: JapanRich;
-    src: url(./assets/font/JapanRich.wolf2);
-  }
+
+
 /* MOBILE */ 
 @media (max-width: 767px) {
     .card{
-        width: 400px;
+        width: 300px;
+        height: 703px;
         margin-bottom: 20px;
         box-shadow: 1px  5px 25px;
         border: 5px solid rgb(75, 75, 75);
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
+        border-radius: 20px;
         text-decoration: none;
         background: linear-gradient(135deg,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
-
+    #title{
+        position: fixed;
+        color: rgb(245, 245, 230);
+        font-family: 'Mukta', sans-serif;
+        text-align: center;
+        letter-spacing: 4px;
+        padding: 9px 10px 10px ;
+        margin: 0;
+        background: rgba( 255, 255, 255, 0.05 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4.5px );
+        -webkit-backdrop-filter: blur( 4.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
+    
     h2 , h3{
         text-align: center;
     }
     h3{
+        font-size: 18px;
         font-family: 'Ubuntu', sans-serif;
         color: rgb(196, 196, 196);
+
     }
     h2{
         font-family: 'Mukta', sans-serif;
+        font-size: 24px;
         color: rgb(231, 231, 231);
     }
     .desc-card{
+        width: 270px;
+        height: 350px;
         padding: 15px 15px;
         border-radius: 15px;
         background: rgb(255,255,255);
         font-family: 'Mukta', sans-serif;
         letter-spacing: 3px;
         text-align: center;
-        background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgba(200,200,200,1) 100%);}
+        background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgba(200,200,200,1) 100%);
+    }
     #container-card{
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-content: center;
-        text-align: center;
     }
     
     .motor{
@@ -61,8 +77,10 @@ body{
         padding-bottom: 2rem;
     }
     .cars-pic{
-        width: 400px;
-        border-radius: 5px;
+        width: 300px;
+        height: 200px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     
     }
     button{
@@ -71,6 +89,15 @@ body{
         border: 1px solid rgb(104, 12, 12);
         border-radius: 6px;
         padding: 2px 6px ;
+    }
+    .card-fade-out {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+      
+    .card-fade-out img {
+        filter: grayscale(100%);
     }
 }
 
@@ -87,27 +114,46 @@ body{
         text-decoration: none;
         background: linear-gradient(135deg,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
+    #title{
+        position: fixed;
+        color: white;
+        font-family: "JapanRich";
+        padding: 10px;
+        margin: 0;
+        margin-bottom: 10px;
+        background: rgba( 255, 255, 255, 0.05 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 4.5px );
+        -webkit-backdrop-filter: blur( 4.5px );
+        border-radius: 10px;
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+    }
     
     h2 , h3{
         text-align: center;
     }
     h3{
+        font-size: 18px;
         font-family: 'Ubuntu', sans-serif;
         color: rgb(196, 196, 196);
+
     }
     h2{
         font-family: 'Mukta', sans-serif;
+        font-size: 24px;
         color: rgb(231, 231, 231);
     }
     .desc-card{
+        width: 270px;
+        height: 350px;
         padding: 15px 15px;
         border-radius: 15px;
         background: rgb(255,255,255);
         font-family: 'Mukta', sans-serif;
         letter-spacing: 3px;
         text-align: center;
-        background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgba(200,200,200,1) 100%);}
-    
+        background: radial-gradient(circle, rgba(255,255,255,1) 15%, rgba(200,200,200,1) 100%);
+    }
     #container-card{
         display: flex;
         justify-content: center;
@@ -125,8 +171,10 @@ body{
         padding-bottom: 2rem;
     }
     .cars-pic{
-        width: 400px;
-        border-radius: 5px;
+        width: 300px;
+        height: 200px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
     
     }
     button{
@@ -137,6 +185,7 @@ body{
         padding: 2px 6px ;
     }
 }
+
 /* LAPTOP */
 @media (min-width: 1024px) {
     .card{
@@ -147,14 +196,25 @@ body{
         border: 5px solid rgb(75, 75, 75);
         border-radius: 20px;
         text-decoration: none;
-        background: linear-gradient(135deg,  #7d7e7d 0%,#0e0e0e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: linear-gradient(135deg,  #7d7e7d 0%,#0e0e0e 100%);
+        transition: transform .1s;
+    }
+    .card:hover{
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+        -webkit-box-shadow: 4px 6px 26px 29px rgba(0,0,0,0.75);
+        -moz-box-shadow: 4px 6px 26px 29px rgba(0,0,0,0.75);
+        box-shadow: 4px 6px 26px 29px rgba(0,0,0,0.75);
     }
     #title{
-        color: white;
-        font-family: "JapanRich";
+        color: rgb(253, 253, 253);
+        font-family: 'Mukta', sans-serif;
+        text-align: center;
+        letter-spacing: 4px;
         padding: 10px;
         margin: 0;
-        margin-bottom: 10px;
+        margin-bottom: 50px;
         background: rgba( 255, 255, 255, 0.05 );
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
         backdrop-filter: blur( 4.5px );
@@ -220,5 +280,17 @@ body{
         border: 1px solid rgb(104, 12, 12);
         border-radius: 6px;
         padding: 2px 6px ;
+    }
+    button:hover{
+        background-color: rgb(104, 12, 12);
+        color: white
+    }
+    .card-fade-out {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    } 
+    .card-fade-out img {
+        filter: grayscale(100%);
     }
 }

@@ -2,7 +2,7 @@
 # The Collection
 
 Ce projet est une collection de ressources.
-Etant passionné d'automobile j'ai regroupé quelques véhicules que j'apprècie.
+Dans ce cas-ci il s'agit d'une collection de véhicules d'origine nipponne.
 
 *Project deploy here : https://paztek1007.github.io/thecollection/*
 
